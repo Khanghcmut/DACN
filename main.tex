@@ -1,0 +1,490 @@
+\documentclass[13pt,a4paper,font=cm]{report}
+% \usepackage{vntex}
+\usepackage[vietnamese]{babel}
+\usepackage[caption=false, font=footnotesize]{subfig}
+\usepackage{times}
+
+\usepackage{notoccite}
+
+
+%\usepackage[english,vietnam]{babel}
+%\usepackage[utf8]{inputenc}
+\usepackage{mathptmx}[ptm]
+\usepackage{indentfirst}
+%\usepackage[utf8]{inputenc}
+%\usepackage[francais]{babel}
+\usepackage{a4wide,amssymb,epsfig,latexsym,array,hhline,fancyhdr}
+
+\usepackage[normalem]{ulem}
+%\usepackage{soul}
+\usepackage{setspace}
+\usepackage{longtable}
+
+\usepackage{algpseudocode}
+
+\usepackage[makeroom]{cancel}
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{multicol,longtable,amscd}
+\usepackage{diagbox}%Make diagonal lines in tables
+\usepackage{booktabs}
+\usepackage{alltt}
+\usepackage[framemethod=tikz]{mdframed}% For highlighting paragraph backgrounds
+\usepackage[font={12pt},margin=1cm]{caption,subcaption}
+% \usepackage[font={12pt},margin=1cm]{caption}
+\usepackage{lastpage}
+\usepackage{algorithm}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}							% Standard graphics package
+\usepackage{array}
+\usepackage{tabularx, caption}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{rotating}
+\usepackage{graphics}
+\usepackage{geometry}
+\usepackage{setspace}
+\usepackage{epsfig}
+\usepackage{tikz}
+\renewcommand{\thesubsubsection}{\thesubsection.\alph{subsubsection}}
+
+\usetikzlibrary{arrows,snakes,backgrounds,calc}
+\usepackage[unicode]{hyperref}
+\hypersetup{urlcolor=blue,linkcolor=black,citecolor=black,colorlinks=true} 
+\usepackage{listings}
+
+%\usepackage{pstcol} 				
+% PSTricks with the standard color package
+
+\usepackage[normalem]{ulem}
+
+\usepackage{titlesec}
+\usepackage[nocompress]{cite}
+\usepackage{times}
+% \bibliographystyle{unsrt}
+% %AUTHOR%%
+\author{Hoang Khang PHAN}
+
+
+\counterwithin{figure}{chapter}
+\counterwithin{table}{chapter}
+\counterwithin{algorithm}{chapter}
+\titleformat{\section}  % which section command to format
+  {\fontsize{13}{16}\bfseries} % format for whole line
+  {\thesection} % how to show number
+  {1em} % space between number and text
+  {} % formatting for just the text
+  [] % formatting for after the text
+
+\titleformat{\subsection}  % which section command to format
+  {\fontsize{13}{16}\bfseries} % format for whole line
+  {\thesubsection} % how to show number
+  {2em} % space between number and text
+  {}% formatting for just the text
+  [] % formatting for after the text
+\titleformat{\subsubsection}  % which section command to format
+{\fontsize{13}{16}\bfseries} % format for whole line
+{\thesubsubsection} % how to show number
+{2em} % space between number and text
+{}% formatting for just the text
+[] % formatting for after the text
+
+\titleformat{\paragraph}  % which section command to format
+{\fontsize{13}{16}\bfseries} % format for whole line
+{\theparagraph} % how to show number
+{2em} % space between number and text
+{}% formatting for just the text
+[] % formatting for after the text
+
+
+
+\newtheorem{theorem}{{\bf Định lý}}
+\newtheorem{property}{{\bf Tính chất}}
+\newtheorem{proposition}{{\bf Mệnh đề}}
+\newtheorem{corollary}[proposition]{{\bf Hệ quả}}
+\newtheorem{lemma}[proposition]{{\bf Bổ đề}}
+\theoremstyle{definition}
+\newtheorem{exer}{Bài toán}
+\addtocontents{toc}{\protect\thispagestyle{empty}}
+% Remove page number in contents page. 
+
+\addtocontents{lof}{\protect\thispagestyle{empty}}
+% Remove page number in list of figure page. 
+\addtocontents{lot}{\protect\thispagestyle{empty}}
+% Remove page number in list of table page. 
+\def\thesislayout{	% A4: 210 × 297
+	\geometry{
+		a4paper,
+		total={160mm,240mm},  % fix over page
+		left=30mm,
+		top=22mm,
+            right=20mm,
+            bottom=20mm,
+	}
+}
+\def\thesisheadlayout{	% A4: 210 × 297
+	\geometry{
+		a4paper,
+		total={160mm,240mm},  % fix over page
+		left=30mm,
+		top=10mm,
+	}
+}
+
+\thesislayout
+\lstset{
+language=R,
+basicstyle=\footnotesize\sffamily,
+commentstyle=\ttfamily\color{black},
+numbers=left,
+numberstyle=\ttfamily\color{black}\footnotesize,
+stepnumber=1,
+numbersep=5pt,
+backgroundcolor=\color{white},
+showspaces=false,
+showstringspaces=false,
+showtabs=false,
+frame=single,
+tabsize=2,
+captionpos=b,
+breaklines=true,
+breakatwhitespace=false,
+title=\lstname,
+escapeinside={},
+keywordstyle={},
+morekeywords={}
+}
+\usepackage{fancyhdr}
+\setlength{\headheight}{40pt}
+\pagestyle{fancy}
+ % clear all header fields
+\renewcommand{\footruleskip}{1mm}
+
+\fancyhead[L]{
+ \begin{tabular}{rl}
+   %  \begin{picture}(25,15)(0,0)
+   %  \put(0,-8){\includegraphics[width=10mm, height=10mm]{Images/hcmut.png}}
+   %  %\put(0,-8){\epsfig{width=10mm,figure=hcmut.eps}}
+   % \end{picture}&
+	%\includegraphics[width=8mm, height=8mm]{hcmut.png} & %
+	\begin{tabular}{l}
+		\textbf{  Trường Đại Học Bách Khoa - Đại học Quốc gia TP.HCM }\\
+		\textbf{  Khoa Khoa Học Ứng Dụng}
+	\end{tabular} 	
+ \end{tabular}
+}
+\fancyhead[R]{ \textbf{Báo cáo Đồ án chuyên ngành} } % clear all footer fields
+\fancyfoot[L]{\scriptsize  SVTH: Phan Hoàng Khang}
+\fancyfoot[R]{\scriptsize GVHD: Ths Lê Nhật Tân\\  Trang {\thepage}/\pageref{LastPage}}
+
+\renewcommand{\headrulewidth}{0.3pt}
+\renewcommand{\footrulewidth}{0.3pt}
+
+%%%
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{3}
+\makeatletter
+\newcounter {subsubsubsection}[subsubsection]
+\renewcommand\thesubsubsubsection{\thesubsubsection .\@alph\c@subsubsubsection}
+\newcommand\subsubsubsection{\@startsection{subsubsubsection}{4}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\normalsize\bfseries}}
+\newcommand*\l@subsubsubsection{\@dottedtocline{3}{10.0em}{4.1em}}
+\newcommand*{\subsubsubsectionmark}[1]{}
+\makeatother
+
+\everymath{\color{black}}%make in-line maths symbols blue to read/check easily
+
+\sloppy
+\captionsetup[figure]{labelfont={Large,bf},textfont={Large,it},belowskip=-1pt}
+%space remove between caption, figure, and text
+\captionsetup[table]{labelfont={Large,bf},textfont={Large,it},belowskip=-1pt}
+\captionsetup[algorithm]{labelfont={Large,bf},textfont={Large,it},belowskip=-1pt}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\intextsep}{10pt plus 2pt minus 2pt}
+
+\thesislayout
+
+\begin{document}
+
+\begin{titlepage}
+\begin{tikzpicture}[remember picture, overlay]
+  \draw[line width = 4pt] ($(current page.north west) + (0.4in,-0.5in)$) rectangle ($(current page.south east) + (-0.4in,0.5in)$);
+  \draw[line width=1.5pt]
+    ($ (current page.north west) + (0.45in,-0.55in) $)
+    rectangle
+    ($ (current page.south east) + (-0.45in,0.55in) $);
+\end{tikzpicture}
+
+\begin{center}
+\LARGE \textbf{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH} \\
+\vspace{0.2cm}
+\LARGE \textbf{TRƯỜNG ĐẠI HỌC BÁCH KHOA} \\
+\vspace{0.2cm}
+\LARGE \textbf{KHOA KHOA HỌC ỨNG DỤNG}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=6cm]{Images/hcmut.png}
+\end{center}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{c}
+\multicolumn{1}{c}{\textbf{{\LARGE ĐỒ ÁN CHUYÊN NGÀNH}}}\\
+\\{\textbf{{\Huge }}}
+% \\{\textbf{{\LARGE ĐỒ ÁN KỸ THUẬT MÁY TÍNH}}}
+% \\{\textbf{{\LARGE ĐỒ ÁN MÔN HỌC}}}
+% \\ \textit{(SV chọn tên môn học cho phù hợp)}
+\\
+\\
+% \textbf{\Huge TÊN ĐỀ TÀI}
+\\ \textbf{\Huge Phân tích hành vi di chuyển của sinh viên } \\ \textbf{\Huge giành cho nhận diện stress hằng ngày}
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+\\
+
+\\ \vspace{0.5cm} {\textbf{{\LARGE Phan Hoàng Khang}}}
+\end{tabular}
+\end{center}
+% \vspace{0.5cm}
+% \begin{table}[h]
+% \begin{tabular}{rll}
+% \hspace{6 cm} &  \textbf{\Large HỘI ĐỒNG:} {\Large ................................}
+% \\
+% \\
+% \hspace{6 cm} &   \textbf{\Large GVHD:} {\Large Lê Nhật Tân}
+% \\
+% \\
+% \hspace{6 cm}  &   \textbf{\Large TKHĐ:} {\Large ................................}
+% \\
+% \\
+% % TKHĐ là THƯ KÝ HỘI ĐỒNG
+% \hspace{6 cm} &     \textbf{$\;$ $\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$ \Large ---o0o---} 
+% \\
+% \\
+% \hspace{6 cm} &   \textbf{\Large SVTH1:} {\Large Phan Hoàng Khang (2111460)}
+% \\
+% \\
+% \hspace{6 cm}&   \textbf{\Large SVTH2:}  {\Large .....Họ \& Tên...........(MSSV)}
+% \\
+% \\
+% \hspace{6 cm} &   \textbf{\Large SVTH3:}  {\Large .....Họ \& Tên...........(MSSV)}
+% \\
+% \\
+% \end{tabular}
+% \end{table}
+\vspace{0.5cm}
+\begin{center}
+{\Large TP. HỒ CHÍ MINH, 12/2024 }
+\end{center}
+\end{titlepage}
+\thispagestyle{empty}
+\newpage
+
+
+%%%%%%%%2nd PAGE%%%%%%%%%%%%%%%%%%%
+\begin{titlepage}
+
+
+\begin{center}
+\LARGE \textbf{ĐẠI HỌC QUỐC GIA THÀNH PHỐ HỒ CHÍ MINH} \\
+\vspace{0.2cm}
+\LARGE \textbf{TRƯỜNG ĐẠI HỌC BÁCH KHOA} \\
+\vspace{0.2cm}
+\LARGE \textbf{KHOA KHOA HỌC ỨNG DỤNG}
+\end{center}
+
+\vspace{0.3cm}
+
+\begin{figure}[h!]
+\begin{center}
+\includegraphics[width=6cm]{Images/hcmut.png}
+\end{center}
+\end{figure}
+
+\begin{center}
+\begin{tabular}{c}
+\multicolumn{1}{c}{\textbf{{\LARGE ĐỒ ÁN CHUYÊN NGÀNH}}}\\
+\\{\textbf{{\Huge }}}
+% \\{\textbf{{\LARGE ĐỒ ÁN KỸ THUẬT MÁY TÍNH}}}
+% \\{\textbf{{\LARGE ĐỒ ÁN MÔN HỌC}}}
+% \\ \textit{(SV chọn tên môn học cho phù hợp)}
+\\
+\\
+% \textbf{\Huge TÊN ĐỀ TÀI}
+\\ \textbf{\Huge Phân tích hành vi di chuyển của sinh viên } \\ \textbf{\Huge giành cho nhận diện stress hằng ngày}
+\\
+\\
+\\
+\\
+
+
+\\ \vspace{0.5cm} {\textbf{{\LARGE Ngành: Vật Lý Kỹ Thuật (7520401)}}}
+\end{tabular}
+\end{center}
+% \vspace{0.5cm}
+\begin{table}[h]
+\begin{tabular}{rll}
+\hspace{6 cm} &  \textbf{\Large Sinh Viên:} {\Large Phan Hoàng Khang}
+\\
+\\
+\hspace{6 cm} &   \textbf{\Large MSSV:} {\Large 2111460 }
+\\
+\\
+\hspace{6 cm}  & \textbf{\Large GVHD:} {\Large Lê Nhật Tân }\\
+\hspace{8 cm}  & {$\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;\;$ \Large GVHD2 } % don't remove $\;$
+\\
+\\
+% TKHĐ là THƯ KÝ HỘI ĐỒNG
+% \hspace{6 cm} &     \textbf{$\;$ $\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$$\;$ \Large ---o0o---} 
+\\
+\\
+% \hspace{6 cm} &   \textbf{\Large SVTH1:} {\Large Phan Hoàng Khang (2111460)}
+% \\
+% \\
+% \hspace{6 cm}&   \textbf{\Large SVTH2:}  {\Large .....Họ \& Tên...........(MSSV)}
+% \\
+% \\
+% \hspace{6 cm} &   \textbf{\Large SVTH3:}  {\Large .....Họ \& Tên...........(MSSV)}
+\\
+\\
+\end{tabular}
+\end{table}
+\vspace{0.5cm}
+\begin{center}
+{\Large TP. HỒ CHÍ MINH, 12/2024 }
+\end{center}
+\end{titlepage}
+\thispagestyle{empty}
+\floatname{algorithm}{Mã giả}
+\renewcommand{\listalgorithmname}{Danh sách mã giả}
+\newpage
+%%%%%%%%%%%%%%%%%INTRO%%%%%%%%%%%%%%%%%%%
+
+\linespread{1.25}
+% \input{Intro/LoiCamOn}
+% \input{Intro/LoiCamDoan}
+\input{Intro/TomTat}
+\input{Intro/abstract}
+\newpage
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+\listoffigures
+\newpage
+\listoftables
+\newpage
+\listofalgorithms
+\newpage
+\setcounter{page}{1}
+%%%%%%%%%%%%%%%%%CONTENTS%%%%%%%%%%%%%%%%%%%
+\input{Contents/GioiThieu}
+\newpage
+\input{Contents/CoSoLyThuyet}
+\newpage
+\input{Contents/PhuongPhap}
+\newpage
+\input{Contents/result}
+\newpage
+\input{Contents/TongKet}
+\input{Contents/phuluc}
+
+
+\bibliographystyle{ieeetr}
+
+% \bibliographystyle{unsrtnat}
+\bibliography{bib}
+% \begin{thebibliography}{00}
+% \bibitem{HSE} HSE on work related stress. 2016.Accessed: http://www.hse.gov.uk/statistics/causdis. 
+
+% \bibitem{american stress} P. N. Alert, ”More Americans Rate Their Mental Health Worse Compared With a Year Ago, Poll Finds,” Psych News Alert, Dec. 22, 2022, https://alert.psychnews.org/2022/12/more-americans-rate-their-mental-health.html 
+
+% \bibitem{stress_reduce_productivity} VanWormer, Jeffrey J; Fyfe-Johnson, Amber L. ND; Boucher, Jackie L, RD; Johnson, Pamela Jo PhD, MPH; Britt, Heather R, MPH; Thygeson, N. Marcus MD; Dusek, Jeffery A. Stress and Workplace Productivity Loss in the Heart of New Ulm Project. Journal of Occupational and Environmental Medicine 53(10):p 1106-1109, October 2011. DOI: https://doi.org/10.1097/JOM.0b013e318229ab18
+ 
+% \bibitem{workday_lost}American Psychiatric Association, ”Americans Anticipate Higher Stress at the Start of 2023 and Grade Their Mental Health Worse,”
+% \bibitem{PS}Pekka Siirtola. 2019. Continuous stress detection using the sensors of commercial smartwatch. In Adjunct Proceedings of the 2019 ACM International Joint Conference on Pervasive and Ubiquitous Computing and Proceedings of the 2019 ACM International Symposium on Wearable Computers (UbiComp/ISWC '19 Adjunct). Association for Computing Machinery, New York, NY, USA, 1198–1201. https://doi.org/10.1145/3341162.3344831
+% \bibitem{d}
+% M. Gjoreski, H. Gjoreski, M. Lutrek, and M. Gams, "Automatic Detection of Perceived Stress in Campus Students Using Smartphones", {\em in 2015 International Conference on Intelligent Environments (IE)}, pp. 132-135, 2015, doi: https://doi.org/10.1109/IE.2015.27.
+
+% \bibitem{e}
+% E. Vildjiounaite, J. Kallio, V. Kyllönen, et al., "Unobtrusive stress detection on the basis of smartphone usage data", {\em Perservative Ubiquitous Computing 22}, 671-688 (2018), doi: https://doi.org/10.1007/s00779-017-1108-z
+% \bibitem{the Guardian}the Guardian (2014), Facebook reveals news feed experiment to control emotions
+% \bibitem{stress_heartrate}M. Salai, I. Vassányi, and I. Kósa, ‘Stress detection using low cost heart rate sensors’, J. Healthc. Eng., vol. 2016, pp. 1–13, 2016.
+% \bibitem{stress_def}Hobfoll, S. E. (1998). Stress, culture, and community: The psychology and philosophy of stress. Plenum Press. https://doi.org/10.1007/978-1-4899-0115-6
+% \bibitem{Stress thermo} Yi Xiaoet al. (2024), Reading Between the Heat: Co-Teaching Body Thermal Signatures for Non-intrusive Stress Detection. Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 7, 4, Article 189 (December 2023), 30 pages. https://doi.org/10.1145/3631441
+% \bibitem{student life}
+% R. Wang et al., "StudentLife: Assessing mental health, academic performance and behavioral trends of college students using smartphones," {\em in Proceedings of the 2014 ACM International Joint Conference on Pervasive and Ubiquitous Computing}, pp. 3-14, 2014.
+% \bibitem{student life2}Xuhai Xu et al. (2023), GLOBEM: Cross-Dataset Generalization of Longitudinal Human Behavior Modeling. Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6, 4, Article 190 (December 2022), 34 pages. https://doi.org/10.1145/3569485
+% \bibitem{student life4} Weichen Wang, Subigya Nepal, Jeremy F. Huckins, Lessley Hernandez, Vlado Vojdanovski, Dante Mack, Jane Plomp, Arvind Pillai, Mikio Obuchi, Alex daSilva, Eilis Murphy, Elin Hedlund, Courtney Rogers, Meghan Meyer, and Andrew Campbell. 2022. First-Gen Lens: Assessing Mental Health of First-Generation Students across Their First Year at College Using Mobile Sensing. Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 6, 2, Article 95 (July 2022), 32 pages. https://doi.org/10.1145/3543194
+
+
+% \bibitem{Muller}
+% P. Müller et al., "Analyzing GPS data for psychological research: A Tutorial", {\em Advances in Methods and Practices in Psychological Science}, vol. 5, no. 2, pp. 25152459221082680, 2022.
+
+% \bibitem{Shikha}Shikha, D. D. Sethia and S. Indu, "Optimization of Wearable Biosensor Data for Stress Classification Using Machine Learning and Explainable AI," in IEEE Access, doi: 10.1109/ACCESS.2024.3463742.
+
+% \bibitem{student life3}Subigya Nepal et al. (2024), Capturing the College Experience: A Four-Year Mobile Sensing Study of Mental Health, Resilience and Behavior of College Students during the Pandemic. Proc. ACM Interact. Mob. Wearable Ubiquitous Technol. 8, 1, Article 38 (March 2024), 37 pages. https://doi.org/10.1145/3643501
+% \bibitem{school_time_and_stress}Verma, S., Sharma, D. and Larson, R. W. (2002) ‘School stress in India: Effects on time and daily emotions’, International Journal of Behavioral Development, 26(6), pp. 500–508. doi: 10.1080/01650250143000454.
+
+% \bibitem{rf} G. Biau and E. Scornet, “A Random Forest Guided Tour - Test,” SpringerLink, https://link.springer.com/article/10.1007/s11749-016-0481-7 (accessed Feb. 23, 2024).
+
+% \bibitem{xgb} XGBoost Documentation. (2022). Accessed: Feb 3, 2024.[Online]. Available: https://xgboost.readthedocs.io/en/stable/\#xgboost-documentation
+
+% \bibitem{SVM} Cortes, C. \& Vapnik, V. Support-vector networks. {\em Machine Learning}. \textbf{20}, 273-297 (1995)
+% \bibitem{SMOTE} G. A. Pradipta, R. Wardoyo, A. Musdholifah, I. N. H. Sanjaya, and M. Ismail, "SMOTE for Handling Imbalanced Data Problem: A Review," {\em 2021 Sixth International Conference on Informatics and Computing (ICIC)}, pp. 1-8, doi: 10.1109/ICIC54025.2021.9632912.
+
+% \bibitem{T-links}Elhassan, T., M, A., F, A. \& Shoukri, M. Classification of Imbalance Data using Tomek Link (T-Link) Combined with Random Under-sampling (RUS) as a Data Reduction Method. {\em Global Journal Of Technology And Optimization}. \textbf{1} (2016,1)
+
+% \bibitem{ENN}Tang, B. \& He, H. ENN: Extended Nearest Neighbor Method for Pattern Recognition [Research Frontier]. {\em IEEE Computational Intelligence Magazine}. \textbf{10}, 52-60 (2015)
+
+% \bibitem{tree explainer} S. M. Lundberg et al., "From local explanations to global understanding with explainable AI for trees",{\em Nature Machine Intelligence}, vol. 2, no. 1, pp. 56–67, Jan. 2020, doi: https://doi.org/10.1038/s42256-019-0138-9.
+
+% \bibitem{shap value} S. Fadel, "Explainable Machine Learning, Game Theory, and Shapley Values: A Technical Review," arXiv preprint arXiv:2202.13535, 2022.
+
+% \bibitem{LIME}M. T. Ribeiro, S. Singh, and C. Guestrin, “Why Should I Trust You?”: Explaining the Predictions of Any Classifier. 2016. [Online]. Available: https://arxiv.org/abs/1602.04938
+
+% \bibitem{Herbert}Herbert, T.B. and Cohen, S. (1993) Stress and Immunity in Humans: A Meta-Analytic Review. Psychosomatic Medicine, 55, 364-379.
+% http://dx.doi.org/10.1097/00006842-199307000-00004
+
+% \bibitem{Lazarus}Lazarus, R. S. (1993). From psychological stress to the emotions: A history of changing outlooks. Annual Review of Psychology, 44, 1–21. https://doi.org/10.1146/annurev.ps.44.020193.000245
+% \bibitem{Youngjun}Youngjun Cho and Nadia Bianchi-Berthouze. 2019. Physiological and affective computing through thermal imaging: A survey. arXiv
+% preprint arXiv:1908.10307 (2019).
+% \bibitem{Alan}Alan T Krzywicki, Gary G Berntson, and Barbara L O’Kane. 2014. A non-contact technique for measuring eccrine sweat gland activity using passive thermal imaging. International journal of psychophysiology 94, 1 (2014), 25–34.
+% \bibitem{eustress distress}J. Bienertova-Vasku, P. Lenart, M. Scheringer, Eustress and Distress: Neither Good Nor Bad, but Rather the Same?. BioEssays 2020, 42, 1900238. https://doi.org/10.1002/bies.201900238
+% \bibitem{eustress distress2}Le Fevre, M., Matheny, J. and Kolt, G.S. (2003), "Eustress, distress, and interpretation in occupational stress", Journal of Managerial Psychology, Vol. 18 No. 7, pp. 726-744. https://doi.org/10.1108/02683940310502412
+
+% \bibitem{eustress distress3}C. Sandi and M. T. Pinelo-Nava, "Stress and memory: behavioral effects and neurobiological mechanisms," Neural Plast., vol. 2007, no. article number 78970, pp. 1-9, 2007. [Online]. Available: https://doi.org/10.1155/2007/78970
+% \bibitem{eustress distress4} N. Schneiderman, G. Ironson, and S. D. Siegel, "Stress and Health: Psychological, Behavioral, and Biological Determinants," Ann. Rev. Clin. Psychol., vol. 1, pp. 607-628, 2005. 
+% \bibitem{cortisol}Lee DY, Kim E, Choi MH. Technical and clinical aspects of cortisol as a biochemical marker of chronic stress. BMB Rep. 2015 Apr;48(4):209-16. doi: 10.5483/bmbrep.2015.48.4.275. PMID: 25560699; PMCID: PMC4436856.
+% \bibitem{datetime_lib} Python Documentation, datetime — Basic date and time types, [Online]. Available: https://docs.python.org/3/library/datetime.html
+% \end{thebibliography}
+
+
+\newpage
+\appendix
+\chapter{Các công bố khoa học cho đồ án này}
+% the \\ insures the section title is centered below the phrase: AppendixA
+Một phần đồ án này được trình bày tại ABC 2023 và ISAS 2024.
+
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\linewidth]{acb2024.png}
+\end{figure}
+
+
+
+\end{document}
+
+
