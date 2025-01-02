@@ -36,9 +36,9 @@ Dựa vào kết quả mô hình phân loại, ta có thể thấy Random Forest
 Điểm đặc biệt là ở mô hình SVM. Mô hình này, mặc dù có khả năng phân loại 2 lớp tốt, nhưng sự phức tạp của cuộc sống con người và sự ngẫu nhiên của các hành động và hành vi con người đã gây nhiều nhiễu, làm ảnh hưởng chung đến kết quả của mô hình. 
 
 % Vì vậy ta có thể nhận thấy việc nhận diện hành vi con người thông qua nhận diện vị trí có khả thi trong việc triển khai trong thực tế, song vẫn còn rất nhiều thách thức.
-\section{Kết quả phân tích đặc trưng bằng XAI}
+\section{Kết quả phân tích đặc trưng bằng XAI}\label{XAI_analytics}
 \begin{figure}[!ht]
-\subfloat[Trường hợp 1 \label{feat_imp2}]{
+\subfloat[Phân loại 2 lớp \label{feat_imp2}]{
     \includegraphics[width=0.45\linewidth,height=0.8\textheight]{Assets/FI_2_class.png}
 }
 % \caption{Random Forest}
@@ -46,13 +46,13 @@ Dựa vào kết quả mô hình phân loại, ta có thể thấy Random Forest
 % \end{subfigure}
 % \hfill
 % \begin{subfigure}[t]{0.24\textwidth}
-\subfloat[Trường hợp 2\label{feat_imp3}]{
+\subfloat[Phân loại 3 lớp\label{feat_imp3}]{
     \includegraphics[width=0.45\linewidth,height=0.8\textheight]{Assets/FI_3_class.png}
 }
 % \caption{XGBoost model}
 % \label{fig_ShaplyXG}
 % \end{subfigure}
-\caption{Biểu đồ phân tích đặc trưng bằng SHAP}
+\caption{Biểu đồ phân tích đặc trưng bằng SHAP. Lớp được phân tích là lớp căng thẳng với trường hợp (a) và lớp căng thẳng cao ở trường hợp (b)}
 \label{feat_imp}
 \end{figure}
 % \section{Phân tích SHAP}
@@ -61,7 +61,7 @@ Với phân tích SHAP, tuần (week) là yếu tố gây nên căng thẳng tâ
 
 Một yếu tố khác có thể kể đến là thời gian giải trí (recreational activity) ảnh hưởng lớn đến sức khoẻ tinh thần của sinh viên. Với thời lượng giành cho các hoạt động giải trí cao, sinh viên sẽ có ít khả năng gặp phải các vấn đề tâm lý. Ngoài ra các yếu tố thời gian khác như thời gian ở nhà và ở trường (home time, và school time) cũng có ảnh hưởng lớn đến trạng thái sức khoẻ tinh thần của sinh viên.
 
-Một yếu tố bổ sung mà tôi đã đề cập ở phần \ref{time_on_school_related_feature} là sự nghỉ học đóng góp tốt cho mô hình. Cụ thể hơn, với sinh viên nghỉ học đây có thể là dấu hiệu cho những vấn đề căng thẳng tâm lý, nhưng ngày sau ngày nghỉ học, các vấn đề đó sẽ phần nào được giải quyết (xem hình \ref{feat_imp}). Đây là một vấn đề đáng quan tâm khi là một bằng chứng chứng tỏ việc nghỉ học có thể giúp sinh viên giải quyết được các vấn đề tinh thần.
+Một yếu tố bổ sung mà tôi đã đề cập ở phần \ref{time_on_school_related_feature} là sự nghỉ học đóng góp tốt cho mô hình. Cụ thể hơn, với sinh viên nghỉ học đây có thể là dấu hiệu cho những vấn đề căng thẳng tâm lý vừa và nhẹ, nhưng là yếu tố giúp sinh viên hạn chế bị căng thẳng tâm lý cao tại ngày hôm đó và ngày sau đó (xem hình \ref{feat_imp}). Đây là một vấn đề đáng quan tâm khi là một bằng chứng chứng tỏ việc nghỉ học có thể giúp sinh viên giải quyết được các vấn đề tinh thần trong ngắn hạn.
 
 
 \section{Bàn luận}
@@ -92,9 +92,33 @@ Ngoài ra, nghiên cứu này đã đề cập các vấn đề liên quan đế
 \label{feat_imp}
 \end{figure}
 
-Về các yếu tố học tập và thời gian, số lượng sinh viên bị căng thẳng cao có xu hướng chiếm phần lớn trong lượng sinh viên. Điều này là một vấn đề bình thường vì việc học thêm kiến thức hằng ngày tạo cho sinh viên áp lực khiến cho sinh viên có thể có những mệt mỏi dẫn đến căng thẳng. Ngoài ra, về số lượng sinh viên bị căng thẳng cao, hai nhóm sinh viên có nghỉ hocj và không nghỉ học có sự khác biệt lớn. Đối với nhóm nghỉ học, tỉ lệ sinh viên bị căng thẳng tăng đến tuần 16-17, tức tuần thi giữa kì, sau đó giữ nguyên. Còn đối với nhóm sinh viên còn lại, việc căng thẳng cao đạt đỉnh tại tuần 16-17. Điều này có thể do sinh viên đi học đầy đủ có điểm thi giữa kì tốt hơn và không chịu áp lực điểm thi cuối kì phải cao để qua môn còn với nhóm sinh viên nghỉ học phải chịu áp lực đó. Đặc biệt hơn, đối với sinh viên không nghỉ học, tỉ lệ sinh viên cảm thấy vui vẻ chiếm nhiều hơn so với nhóm sinh viên nghỉ học, thể hiện sinh viên đi học đầy đủ có thể phải chịu ít áp lực do học tập hơn nhóm còn lại. 
+Về các yếu tố học tập và thời gian, số lượng sinh viên bị căng thẳng cao có xu hướng chiếm phần lớn trong lượng sinh viên. Điều này là một vấn đề bình thường vì việc học thêm kiến thức hằng ngày tạo cho sinh viên áp lực khiến cho sinh viên có thể có những mệt mỏi dẫn đến căng thẳng. Ngoài ra, về số lượng sinh viên bị căng thẳng cao, hai nhóm sinh viên có nghỉ học và không nghỉ học có sự khác biệt lớn. Đối với nhóm nghỉ học, tỉ lệ sinh viên bị căng thẳng tăng đến tuần 16-17, tức tuần thi giữa kì, sau đó giữ nguyên. Còn đối với nhóm sinh viên còn lại, việc căng thẳng cao đạt đỉnh tại tuần 16-17. Điều này trái ngược với phân tích XAI nói trên (xem Phần \ref{XAI_analytics}), việc này xảy ra có thể do ảnh hưởng của yếu tố tuần đã thu hút sự tập trung của mô hình dẫn đến việc khi xem xét theo nguyên tắc trò chơi, mô hình giải thích sẽ phải cân bằng giữa hai yếu tố này, dẫn đến sự quá khớp trong việc giải thích yếu tố nghỉ học. Lý giải cho việc căng thẳng khả năng sinh viên bị căng thẳng tăng cao, do việc nghỉ học vào khoảng thời gian cuối kì, nơi khối lượng học và độ khó của kiến thức cao hơn, đặt một áp lực cao hơn với học sinh thiếu sự hướng dẫn. Ngoài ra việc nghỉ học có thể là hệ quả của việc sinh viên có nhiều việc cần ưu tiên hơn và giải quyết hết các việc này trong một số ngày nhất định mà không để lấn sang các thời gian khác đôi khi đặt áp lực lớn đến sinh viên. Đặc biệt hơn, đối với sinh viên không nghỉ học, tỉ lệ sinh viên cảm thấy vui vẻ chiếm nhiều hơn so với nhóm sinh viên nghỉ học, thể hiện sinh viên đi học đầy đủ có thể phải chịu ít áp lực do học tập hơn nhóm còn lại. 
+
+\begin{figure}[!ht]
+\subfloat[Không nghỉ học ngày trước đó \label{feat_skip1}]{
+    \includegraphics[width=0.45\linewidth]{Assets/1_day_after_skipclass_neg.png}
+}
+% \caption{Random Forest}
+% \label{fig_ShaplyRF}
+% \end{subfigure}
+% \hfill
+% \begin{subfigure}[t]{0.24\textwidth}
+\subfloat[Nghỉ học ngày trước đó \label{feat_skip2}]{
+    \includegraphics[width=0.45\linewidth]{Assets/1_day_after_skipclass_pos.png}
+}
+% \caption{XGBoost model}
+% \label{fig_ShaplyXG}
+% \end{subfigure}
+\caption{Biểu đồ tỉ số số lượng sinh viên theo trang thái tâm lý trong các tuần học đối với nhóm sinh viên có thực hiện (a) Không nghỉ học ngày trước đó, (b) Nghỉ học ngày trước đó}
+\label{feat_skip}
+\end{figure}
+
+Thú vị hơn Hình \ref{feat_skip} chỉ ra mối liên hệ giữa việc nghỉ học ngày trước đó và mức độ căng thẳng của sinh viên. Trái ngược với ngày nghỉ học, ngày sau nghỉ học sinh viên có xu hướng cảm thấy ít bị căng thẳng cao hơn. Có thể sự nghỉ học của ngày hôm trước đã giúp sinh viên hoàn thành được những công việc còn đang tụ đọng của sinh viên. Vì vậy việc xem xét hành vi sinh viên có thể là một cách để hiểu thêm về đời sống tâm lý của các sinh viên này.
 
 Một điều đáng quan tâm là yếu tố lý do cho sự nghỉ học. Về lý do nghỉ học cho các hoạt động bên ngoài, điều này là dấu hiệu của việc sinh viên bị căng thẳng tâm lý (hình \ref{feat_imp}). Để giải thích cho vấn đề này, việc sinh viên bị stress sẽ có xu hướng ra ngoài làm những việc thư giãn, điều này sẽ giúp cho sinh viên cảm thấy tốt hơn, dẫn đến những ngày có dữ liệu sinh viên nghỉ học để đi ra ngoài được gán với trạng thái tâm lý stress của sinh viên. Đặc biệt hơn việc nghỉ học để ở nhà lại có ít tác động đến sức khoẻ tinh thần của sinh viên hơn so với nghỉ học để cho các hoạt động bên ngoài. Theo tư duy thông thường, nhà là nơi để nghỉ ngơi và có thể là nơi để giải toả các vấn đề nhưng với cuộc sống sinh viên, thời gian ở nhà có thể được gán cho hai việc, nghỉ ngơi, hoặc hoàn thành các hạn nộp bài. Hai yếu tố này diễn ra trong cùng một loại vị trí và có tác động trái ngược nhau, vì vậy việc nghỉ học để ở nhà được phân tích gây nên yếu tố ở nhà có thể ảnh hưởng tích cực lẫn tiêu cực đến sức khoẻ tinh thần của sinh viên
+
+
+
 
 \begin{figure}[!ht]
     \centering

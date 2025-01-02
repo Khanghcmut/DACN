@@ -1,0 +1,12 @@
+\section*{Abstract}
+\thispagestyle{empty}
+\fontsize{13}{16}
+\selectfont
+Psychological stress, a prevalent mental health disorder, significantly impacts quality of life and work performance, especially for students under academic pressure. Effective management of this psychological issue is essential to minimize negative consequences and enable timely intervention. This research utilizes smartphone data - a ubiquitous tool in modern life - to develop a robust method for remote monitoring and management of stress.
+
+In this study, features such as static duration; location-based time metrics (time spent at school, at home, dining out, etc., in the morning, afternoon, or all day) obtained from GPS data; movement-related time features (commute time, leisure time, etc., in the morning, afternoon, or all day); estimated class absences by comparing schedules with student location; upcoming student deadlines; and time-based features like day of the week and week of the semester were extracted from the StudentLife dataset.
+
+Stress detection was tested in two classification scenarios: binary classification (stressed/not stressed) and ternary classification (feeling happy, slightly stressed, and stressed). In both cases, we experimented with three popular machine learning models: SVM, XGBoost, and Random Forest. Results showed that, in binary classification, Random Forest achieved an accuracy of up to 79\% and a macro F1 score of 63\%, and it also dominated ternary classification with an accuracy and macro F1 score of 66\% and 51\%, respectively. Furthermore, we employed Shapley Additive exPlanations (SHAP) to assess insights from these extracted features. Results indicated that the 'week in semester' feature was the most distinctive characteristic for student stress levels. It's also worth noting that students who skipped class were slightly more likely to experience moderate or low stress on that day but were less likely to experience high stress that day and the following day compared to other students. These insights are valuable for future research and provide practical approaches to stress detection and management.
+
+\clearpage
+\pagenumbering{arabic}

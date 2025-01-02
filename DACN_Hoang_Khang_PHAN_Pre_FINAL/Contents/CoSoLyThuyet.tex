@@ -115,24 +115,28 @@ Với học sâu, mạng này có thể tạo thực hiện những công việc
 Vì vậy học sâu đang ngày càng mở rộng tầm ảnh hưởng trong thực tế và là công cụ được tin dùng hàng đầu trong kỷ nguyên này.
 
 \subsection{Trí tuệ nhân tạo giải thích}
+\begin{figure}[!ht]
+    \centering
+    \includegraphics[width=\linewidth]{XAI.jpeg}
+    \caption[]{So sánh cách hoạt động của mô hình AI truyền thống (trên) và XAI (dưới) (Nguồn Medium\footnotemark)}
+    \label{fig:enter-label}
+    
+
+\end{figure}
+\footnotetext{Understanding XAI and EBM truy cập từ: https://medium.com/predmatic/understanding-xai-and-ebm-112bcc7babc3}
 XAI (Explainable Artificial Intelligence) hay Trí tuệ nhân tạo có thể giải thích là một lĩnh vực nghiên cứu tập trung vào việc làm cho các hệ thống trí tuệ nhân tạo trở nên minh bạch và dễ hiểu hơn. Thay vì chỉ cung cấp kết quả cuối cùng, XAI cho phép chúng ta hiểu rõ quá trình ra quyết định bên trong của các mô hình AI. Điều này đặc biệt quan trọng đối với các hệ thống AI được sử dụng trong các lĩnh vực có liên quan đến an toàn, pháp lý và y tế, nơi mà sự tin tưởng vào các quyết định của AI là vô cùng cần thiết. XAI sử dụng nhiều kỹ thuật khác nhau để giải thích, từ việc đơn giản hóa các mô hình phức tạp đến việc tạo ra các bản trực quan hoá về cách các yếu tố đầu vào ảnh hưởng đến kết quả cuối cùng.
 
 XAI mang đến nhiều ứng dụng thực tế quan trọng, đặc biệt trong việc giải thích các quyết định phức tạp của các mô hình AI. Như trong lĩnh vực tâm lý học, XAI có thể được sử dụng để giải thích tại sao một mô hình AI lại dự đoán một người nào đó có xu hướng mắc rối loạn tâm lý, hoặc trầm cảm, hay stress. Điều này giúp các nhà tâm lý học hiểu rõ hơn về quá trình ra quyết định của mô hình và từ đó đưa ra những đánh giá chính xác hơn về tình trạng của bệnh nhân. Ngoài ra, trong lĩnh vực thị giác máy tính (Computer Vision), XAI có thể được dùng để giải thích tại sao một mô hình lại xác định một vật thể trong hình ảnh là một con mèo chứ không phải một con chó, một khối u là lành tính chứ không phải ác tính,... Bằng cách làm rõ những yếu tố hình ảnh quan trọng mà mô hình dựa vào, chúng ta có thể đánh giá được độ tin cậy của kết quả và cải thiện hiệu suất của mô hình.
 
 Do vậy XAI đang nổi lên như là một phương pháp hiện đại trong ngành kỹ thuật y sinh - nơi những kết quả cần có những lý giải chính xác cũng như những lý giải đó sẽ giúp con người có cái nhìn tổng quan về cuộc sống của chính bản thân mình.
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{XAI.jpeg}
-    \caption[]{So sánh cách hoạt động của mô hình AI truyền thống (trên) và XAI (dưới) (Nguồn Medium\footnotemark)}
-    \label{fig:enter-label}
-\end{figure}
-\footnotetext{Understanding XAI and EBM truy cập từ: https://medium.com/predmatic/understanding-xai-and-ebm-112bcc7babc3}
-\newpage
+
+
+
 \section{Các nghiên cứu liên quan}
 Căng thẳng tâm lý và tác động của căng thẳng tâm lý là một đề tài được quan tâm từ giới nghiên cứu  \cite{stress_heartrate,Stress_thermo,stress_eeg,student_life,student_life2,student_life3,student_life4,eustress_distress,eustress_distress2,eustress_distress3,eustress_distress4}. Với sự phát triển này, các vấn đề tâm lý đang có thể nhận diện bằng nhiều nguồn khác nhau: tín hiệu y sinh \cite{stress_eeg,stress_eeg2, stress_heartrate}, camera \cite{Stress_thermo}, tín hiệu điện thoại \cite{student_life, student_life2}. Việc này càng đẩy mạnh sự phát triển của công nghệ nhận diện sức khoẻ tinh thần, đưa ra những phương pháp nhận diện sức khoẻ tinh thần đáng tin cậy.
 % add table of 
 \subsection{Các nghiên cứu không sử sử dụng thiết bị di động}
-NhTrong nhận diện sức khoẻ tinh thần, các tín hiệu y sinh là điều quan trọng để nhận diện được tình trạng tâm  lý của một đối tượng. Vì vậy nhóm nghiên cứu của Houtan \cite{stress_eeg} đã thực hiện đo tín hiệu điện não (EEG) của 11 tình nguyên viên trong công trường. Sử dụng các đặc trưng từ tín hiệu EEG theo miền thời gian, và miền tần số nghiên cứu này đã đạt được mô hình phân loại với độ chính xác cao (từ 60\% đến 80\%). Nhưng nhóm nghiên cứu này đề cập về vấn đề của sư suy giảm sư chính xác của việc nhân diên các diễn biến của tâm lý liên tục thông qua cửa sổ trươt (sliding window).
+Trong nhận diện sức khoẻ tinh thần, các tín hiệu y sinh là điều quan trọng để nhận diện được tình trạng tâm  lý của một đối tượng. Vì vậy nhóm nghiên cứu của Houtan \cite{stress_eeg} đã thực hiện đo tín hiệu điện não (EEG) của 11 tình nguyên viên trong công trường. Sử dụng các đặc trưng từ tín hiệu EEG theo miền thời gian, và miền tần số nghiên cứu này đã đạt được mô hình phân loại với độ chính xác cao (từ 60\% đến 80\%). Nhưng nhóm nghiên cứu này đề cập về vấn đề của sư suy giảm sư chính xác của việc nhân diên các diễn biến của tâm lý liên tục thông qua cửa sổ trươt (sliding window).
 
 Về các nghiên cứu sử dụng tín hiệu y sinh, Salai và các cộng sự đã ứng dụng cảm biến nhịp tim đã có thể tạo ra mô hình phân loại stress tâm lý trên 46 tình nguyện viên với độ chính xác 75\% \cite{stress_heartrate}. Với mô hình này, nhóm của Salai sử dụng các yếu tố nhịp tim cổ điển như giá trị độ lệch chuẩn nhịp tim trung bình, nhịp tim trung bình, căn bậc hai trung bình của các chênh lệch liên tiếp (RMSSD) và PNN50 để làm đặc trưng của mô hình phân loại.
 
